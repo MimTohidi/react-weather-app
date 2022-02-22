@@ -49,9 +49,9 @@ export default function Weather(props) {
                   {weatherData.city}, {weatherData.country}
                 </h1>
                 <hr />
+
                 <p className="text-capitalize">
-                  <FormattedDate data={weatherData.date} />
-                  <br />
+                  <FormattedDate date={weatherData.date} />
                   {weatherData.description}.
                 </p>
               </div>
