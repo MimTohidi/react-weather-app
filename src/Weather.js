@@ -16,7 +16,7 @@ export default function Weather(props) {
       city: respoonse.data.name,
       humidity: respoonse.data.main.humidity,
       description: respoonse.data.weather[0].description,
-      icon: `https://openweathermap.org/img/wn/${respoonse.data.weather[0].icon}@2x.png`,
+      icon: respoonse.data.weather[0].icon,
       date: new Date(respoonse.data.dt * 1000),
       country: respoonse.data.sys.country,
     });
