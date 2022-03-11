@@ -5,6 +5,15 @@
   color: #e3e3e3;
 }
 
+.WeatherForecastDay {
+  background-color: hsl(0, 0%, 89%, 0.04);
+  border-radius: 6px;
+}
+
+.WeatherForecast-day {
+  font-size: 20px;
+}
+
 .WeatherForecast-temp {
   font-size: 30px;
 }
