@@ -9,7 +9,7 @@ export default function WeatherInfo(props) {
         <div className="container">
           <div className="hero">
             <div className="row d-flex justify-content-between mb-5">
-              <div className="col-6 description ">
+              <div className="col-lg-6 description ">
                 <h1>
                   {props.data.city}, {props.data.country}
                 </h1>
@@ -20,14 +20,14 @@ export default function WeatherInfo(props) {
                   {props.data.description}.
                 </p>
               </div>
-              <div className="col-3 weather-temp">
+              <div className="col-lg-3 weather-temp">
                 <div className="row">
-                  <div className="col-4 ">
+                  <div className="col-lg-4 ">
                     <div className="weather-icon">
                       <WeatherIcon code={props.data.icon} color="#385170" />
                     </div>
                   </div>
-                  <div className="col-7">
+                  <div className="col-lg-7">
                     <span className="temp">
                       {Math.round(props.data.temperature)}
                     </span>
