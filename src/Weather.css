@@ -48,9 +48,3 @@
   padding: 8px 13px;
   border-radius: 35px;
 }
-
-@media (max-width: 800px) {
-  .Weather {
-    font-size: 20px;
-  }
-}
