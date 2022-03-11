@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import WeatherIcon from "./WeatherIcon";
 import WeatherForecastDay from "./WeatherForecastDay";
 import axios from "axios";
 
@@ -10,8 +9,8 @@ export default function WeatherForecast(props) {
   let [forecast, setForecast] = useState(null);
 
   function handleResponse(response) {
-    setLoaded(true);
     setForecast(response.data.daily);
+    setLoaded(true);
   }
 
   if (loaded) {
@@ -34,6 +33,6 @@ export default function WeatherForecast(props) {
 
     axios.get(apiUrl).then(handleResponse);
 
-    return "loading";
+    return null;
   }
 }
