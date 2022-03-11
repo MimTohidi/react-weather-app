@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 
 import "./Weather.css";
@@ -19,6 +20,7 @@ export default function Weather(props) {
       icon: respoonse.data.weather[0].icon,
       date: new Date(respoonse.data.dt * 1000),
       country: respoonse.data.sys.country,
+      coordinates: respoonse.data.coord,
     });
   }
 
@@ -40,26 +42,31 @@ export default function Weather(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="Weather">
-        <div className="container">
-          <form className="mb-2 " onSubmit={handleSubmit}>
-            <div className="row">
-              <div className="col-4">
-                <input
-                  type="text"
-                  placeholder="Enter a city..."
-                  className="form-control search-input"
-                  onChange={handleCityChange}
-                />
+      <>
+        <div className="Weather">
+          <div className="container">
+            <form className="mb-4 " onSubmit={handleSubmit}>
+              <div className="row">
+                <div className="col-4">
+                  <input
+                    type="text"
+                    placeholder="Enter a city..."
+                    className="form-control search-input"
+                    onChange={handleCityChange}
+                  />
+                </div>
+                <div className="col-2 ">
+                  <input type="submit" value="🔍" className="btn search-btn" />
+                </div>
               </div>
-              <div className="col-2 ">
-                <input type="submit" value="🔍" className="btn search-btn" />
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
+          <WeatherInfo data={weatherData} />
         </div>
-        <WeatherInfo data={weatherData} />
-      </div>
+        <div>
+          <WeatherForecast coordinates={weatherData.coordinates} />
+        </div>
+      </>
     );
   } else {
     search();

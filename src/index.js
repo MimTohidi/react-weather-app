@@ -4,12 +4,11 @@ import "./index.css";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.css";
 import reportWebVitals from "./reportWebVitals";
-import WeatherForecast from "./WeatherForecast";
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <WeatherForecast />
+
     <p className="text-center footer">
       This project was coded by{" "}
       <a href="mailto:mim.tohidi@gmail.com">Mim Tohidi</a> and is open-sourced
